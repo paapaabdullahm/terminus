@@ -14,7 +14,7 @@ $ echo 'TERMINUS_VERSION="v2.6.0"' | sudo tee -a /etc/environment > /dev/null
 To update an already exported version (optional)
 ```sh
 $ export TERMINUS_VERSION="<your-new-version-string-goes-here>"
-$ sudo sed -i "/TERMINUS_VERSION/c TERMINUS_VERSION=\"$TERMINUS_VERSION\"" /etc/environment
+$ sudo sed -i "/TERMINUS_VERSION/c TERMINUS_VERSION=\"${TERMINUS_VERSION}\"" /etc/environment
 ```
 
 Pull image from docker.io
