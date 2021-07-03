@@ -39,9 +39,9 @@ TTY_FLAG=``
 if [ -t 1 ]; then TTY_FLAG="-t"; fi
 
 exec docker run --rm -i ${TTY_FLAG} \
+     --volume ~/.terminus:/var/www/.terminus \
      --volume "$(pwd)":/src \
      --workdir /src \
-     --user $(id -u):$(id -g) \
      "pam79/terminus:${TERMINUS_VERSION}" "$@";
 ```
 
