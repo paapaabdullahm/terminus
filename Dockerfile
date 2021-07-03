@@ -20,7 +20,10 @@ RUN apt update && apt install -y bash curl wget git openssh-server openssl zip u
     chmod +x /usr/bin/terminus; \
     #
     # Create directory where terminus can write to
-    mkdir -p /var/www/.terminus;
+    mkdir -p /var/www/.terminus; \
+    #
+    # Make directory writable
+    chmod -R 775 /var/www/.terminus;
 
 ADD docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
