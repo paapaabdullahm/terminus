@@ -17,20 +17,21 @@ RUN apt update && apt install -y bash curl wget git openssh-server openssl zip u
     mv terminus.phar /usr/bin/terminus; \
     #
     # Make binary executable
-    chmod +x /usr/bin/terminus; \
+    chmod +x /usr/bin/terminus;
     #
     # Create directory where terminus can write to
-    mkdir -p /var/www/.terminus; \
+    # mkdir -p /var/www/.terminus; \
     #
     # Make directory writable
-    chmod -R a+rwx /var/www/.terminus; \
+    # chmod -R a+rwx /var/www/.terminus; \
     #
     # Modify user account
-    usermod -u 1000 docker
+    # usermod -u 1000 docker
 
 ADD docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
 
+USER 1000:1000
 WORKDIR /src
 VOLUME /src
 
