@@ -26,3 +26,4 @@ WORKDIR /src
 VOLUME /src
 
 ENTRYPOINT ["php", "/usr/bin/terminus"]
+CMD ["terminus"]
