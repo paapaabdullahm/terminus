@@ -25,4 +25,4 @@ RUN chmod +x /docker-entrypoint.sh
 WORKDIR /src
 VOLUME /src
 
-ENTRYPOINT ["/usr/bin/terminus"]
+ENTRYPOINT ["php", "/usr/bin/terminus"]
