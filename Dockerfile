@@ -23,10 +23,10 @@ RUN apt update && apt install -y bash curl wget git openssh-server openssl zip u
     mkdir -p /var/www/.terminus; \
     #
     # Make directory writable
-    chmod -R 775 /var/www/.terminus; \
+    chmod -R a+rwx /var/www/.terminus; \
     #
     # Change owner:group permissions
-    chown -R 0:1000 /var/www/.terminus;
+    #chown -R 0:1000 /var/www/.terminus;
 
 ADD docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
