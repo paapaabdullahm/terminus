@@ -25,5 +25,4 @@ RUN chmod +x /docker-entrypoint.sh
 WORKDIR /src
 VOLUME /src
 
-ENTRYPOINT ["/bin/bash"]
-CMD ["terminus"]
+ENTRYPOINT ["/usr/bin/terminus"]
